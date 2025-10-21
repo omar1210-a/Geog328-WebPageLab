@@ -1,37 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <title>My Personal Web Page</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="css/main.css" />
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <meta charset="utf-8" />
+    <title>My Personal Web Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 </head>
+
 <body>
 
-  <div class="topnav" id="myTopnav">
-    <a href="index.html" class="active">Abstract</a>
-    <a href="section1.html">Section 1</a>
-    <a href="section2.html">Section 2</a>
-    <a href="section3.html">Section 3</a>
-    <a href="see_also.html">See Also</a>
-    <a href="references.html">References</a>
-    <a href="javascript:void(0);" class="icon" aria-label="Toggle navigation">
-      <i class="fa fa-bars" aria-hidden="true"></i>
-    </a>
-  </div>
+    <div class="topnav" id="myTopnav">
+        <a href="index.html" class="active">Abstract</a>
+        <a href="section1.html">Section 1</a>
+        <a href="section2.html">Section 2</a>
+        <a href="section3.html">Section 3</a>
+        <a href="see_also.html">See Also</a>
+        <a href="references.html">References</a>
+        <a href="javascript:void(0);" class="icon" aria-label="Toggle navigation">
+            <i class="fa fa-bars" aria-hidden="true"></i>
 
-  <div class="content">
-    <h1>My Personal Web Page</h1>
-    <hr>
+        </a>
+    </div>
 
-    <figure>
-      <img src="img/cover.jpg" alt="Cover image related to the course or topic" style="width:100%;height:auto;">
-      <figcaption>Cover image</figcaption>
-    </figure>
-  </div>
+    <!-- Video  -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="video/856486-hd_1920_1080_30fps.mp4" type="video/mp4">
+    </video>
 
-  <script src="js/main.js"></script>
+    <div class="content">
+        <h1>My Personal Web Page</h1>
+        <hr>
+        <h2>Highlights</h2>
+        <!-- Accordion   -->
+        <button class="accordion">What did I build?</button>
+        <div class="panel">
+            <p>A responsive multi-page site converted from my wiki.</p>
+        </div>
+        <button class="accordion">Super cool button</button>
+        <figure>
+            <img src="img/2003-4Q-059.JPG" alt="Cover image related to the course or topic" style="width:100%;height:auto;">
+            <figcaption>Concorde</figcaption>
+        </figure>
+    </div>
+
+    <script src="js/main.js"></script>
 </body>
+
 </html>
