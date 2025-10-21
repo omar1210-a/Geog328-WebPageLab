@@ -1,11 +1,15 @@
 :root {
-  --nav-bg: #4B2E83;        /* main background (UW purple) */
-  --nav-hover: #85754D;     /* hover color (gold) */
-  --nav-active: #E8D3FF;    /* active page highlight */
-  --nav-text: #ffffff;      /* text color */
+  --nav-bg: #4B2E83;
+  /* main background (UW purple) */
+  --nav-hover: #85754D;
+  /* hover color (gold) */
+  --nav-active: #E8D3FF;
+  /* active page highlight */
+  --nav-text: #ffffff;
+  /* text color */
 }
 
-/* ---------- DESKTOP NAVBAR ---------- */
+/* DESKTOP NAVBAR */
 .topnav {
   overflow: hidden;
   background-color: var(--nav-bg);
@@ -38,25 +42,79 @@
   display: none;
 }
 
-/* ---------- RESPONSIVE NAVBAR (≤850px) ---------- */
+/* RESPONSIVE NAVBAR */
 @media screen and (max-width: 850px) {
-  .topnav a:not(:first-child) { display: none; }   /* hide links */
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+
+  /* hide links */
   .topnav a.icon {
     float: right;
     display: block;
   }
 
   /* When menu is open */
-  .topnav.responsive { position: relative; }
+  .topnav.responsive {
+    position: relative;
+  }
+
   .topnav.responsive a.icon {
     position: absolute;
     right: 0;
     top: 0;
   }
+
   .topnav.responsive a {
     float: none;
     display: block;
     text-align: left;
-    border-top: 1px solid rgba(255,255,255,0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+  }
+
+  .accordion {
+    width: 100%;
+    text-align: left;
+    border: none;
+    padding: 14px 16px;
+    margin: .5rem 0;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, .06)
+  }
+
+  .accordion:hover,
+  .accordion.active {
+    background: #eef6ff
+  }
+
+  .panel {
+    display: none;
+    padding: 0 16px 12px;
+    background: #fff;
+    border-radius: 0 0 8px 8px
+  }
+
+  #bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, .8);
+    background: rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    padding: 20px
   }
 }

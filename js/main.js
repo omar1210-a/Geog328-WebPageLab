@@ -16,5 +16,13 @@ function responsive_control() {
   } else {
     // If it's not, remove the "responsive" class from the element
     x.className = "topnav";
+
+    document.querySelectorAll('.accordion').forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const p = btn.nextElementSibling;
+        p.style.display = p.style.display === 'block' ? 'none' : 'block';
+      });
+    });
   }
 }
