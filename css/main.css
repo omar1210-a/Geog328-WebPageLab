@@ -1,8 +1,8 @@
 :root {
-  --nav-bg: #4B2E83;     /* main background (UW purple) */
-  --nav-hover: #85754D;  /* hover color (gold) */
-  --nav-active: #E8D3FF; /* active page highlight */
-  --nav-text: #ffffff;   /* text color */
+  --nav-bg: #4B2E83;     
+  --nav-hover: #85754D;  
+  --nav-active: #E8D3FF; 
+  --nav-text: #ffffff;   
 }
 
 /*DESKTOP NAVBAR*/
@@ -100,3 +100,25 @@
 /* Helpful base styles */
 html, body { margin: 0; min-height: 100%; }
 .content img { max-width: 100%; height: auto; display: block; }
+
+/* Snackbar */
+/* Caret-based collapsible list */
+.caret {
+  cursor: pointer;
+  user-select: none;
+}
+.caret::before {
+  content: "\25B6"; /* ► */
+  display: inline-block;
+  margin-right: 6px;
+}
+.caret-down::before {
+  transform: rotate(90deg);
+}
+.nested {
+  display: none;
+  margin-left: 1rem; 
+}
+.nested.active {
+  display: block;
+}

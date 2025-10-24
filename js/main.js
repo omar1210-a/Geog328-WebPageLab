@@ -1,28 +1,33 @@
-// Get the element with the class "icon"
-let icon = document.getElementsByClassName("icon")[0];
-
-// Add an event listener for the 'click' event on the icon element
-icon.addEventListener('click', responsive_control);
-
-// Function to control the responsiveness of the navigation bar
-function responsive_control() {
-  // Get the element with the id "myTopnav"
-  let x = document.getElementById("myTopnav");
-
-  // Check if the class name of the element is "topnav"
-  if (x.className === "topnav") {
-    // If it is, add the "responsive" class to the element
-    x.className += " responsive";
-  } else {
-    // If it's not, remove the "responsive" class from the element
-    x.className = "topnav";
-
-    document.querySelectorAll('.accordion').forEach(btn => {
-      btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        const p = btn.nextElementSibling;
-        p.style.display = p.style.display === 'block' ? 'none' : 'block';
-      });
+document.addEventListener('DOMContentLoaded', () => {
+  // --- Topnav (hamburger) toggle ---
+  const topnav = document.getElementById('myTopnav');
+  const icon = document.querySelector('.icon');
+  if (icon && topnav) {
+    icon.addEventListener('click', () => {
+      // toggle 'responsive' on/off
+      if (topnav.className === 'topnav') {
+        topnav.className = 'topnav responsive';
+      } else {
+        topnav.className = 'topnav';
+      }
     });
   }
-}
+
+  // --- Caret (snack bar) toggle: run once on load ---
+  document.querySelectorAll('.caret').forEach(caret => {
+    caret.addEventListener('click', function () {
+      const nested = this.parentElement.querySelector('.nested');
+      if (nested) nested.classList.toggle('active');
+      this.classList.toggle('caret-down');
+    });
+  });
+
+  // --- Optional: only if you actually use .accordion elements ---
+  document.querySelectorAll('.accordion').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.classList.toggle('active');
+      const p = btn.nextElementSibling;
+      if (p) p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+    });
+  });
+});
